@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Any, Optional, Dict
+from typing import Any, Dict, Optional
 
 import requests
 
@@ -8,6 +8,7 @@ class BaseParser(ABC):
     """
     Базовый класс для создания классов для подключения к АПИ с методом подключения
     """
+
     def __init__(self):
         self.base_url = "https://api.hh.ru/"
 

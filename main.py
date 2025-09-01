@@ -1,18 +1,14 @@
 import os
 
-from src.api_connection import Vacancy
-from src.db_connection import (
-    create_db,
-    create_employers_table,
-    create_vacancies_table,
-    insert_data_in_employers,
-    insert_data_in_vacancies,
-)
-from src.db_worker import DBManager
-from src.utils import select_employers_ids, get_full_employers_info
-
 from dotenv import load_dotenv
 
+from src.api_connection import Vacancy
+from src.db_connection import (create_db, create_employers_table,
+                               create_vacancies_table,
+                               insert_data_in_employers,
+                               insert_data_in_vacancies)
+from src.db_worker import DBManager
+from src.utils import get_full_employers_info, select_employers_ids
 
 load_dotenv()
 DATABASE_PASSWORD = os.getenv("DATABASE_PASSWORD")
@@ -65,7 +61,9 @@ def main():
         print(vacancies_list)
         insert_data_in_vacancies(params, db_name, vacancies_list)
 
-        db_option = DBManager("localhost", db_name, "maria_zhiganova", DATABASE_PASSWORD)
+        db_option = DBManager(
+            "localhost", db_name, "maria_zhiganova", DATABASE_PASSWORD
+        )
 
         while True:
             print(
