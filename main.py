@@ -49,7 +49,7 @@ def main():
             "host": "localhost",
             "port": "5432",
             "database": "postgres",
-            "user": "maria_zhiganova",
+            "user": "mikhail lemdyanov",
             "password": DATABASE_PASSWORD,
         }
 
