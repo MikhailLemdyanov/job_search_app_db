@@ -8,7 +8,7 @@ class DBManager:
     """
     class DBManager - класс который будет подключаться к БД PostgreSQL
 
-    Имеет методы:
+    Методы:
 
     get_companies_with_vacancy_counts - возвращает список компаний и количество вакансий у каждой.
     get_all_vacancies_with_company - возвращает список всех вакансий с названием компании,

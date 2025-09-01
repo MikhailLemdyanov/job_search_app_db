@@ -17,7 +17,7 @@ def create_postgres_db():
     conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
     cursor = conn.cursor()
 
-    # Создаем базу, если она еще не существует
+    # Создаем БД, если она еще не существует
     cursor.execute("SELECT 1 FROM pg_database WHERE datname='my_new_db'")
     exists = cursor.fetchone()
 
@@ -32,7 +32,7 @@ def create_postgres_db():
 
 
 def filling_in_table_organizations():
-    """Создание таблицы для организаций и заполнение данными"""
+    """Создание таблицы для организаций и наполнение данными"""
     load_dotenv()
     password = os.getenv("password")
     conn_params = {
